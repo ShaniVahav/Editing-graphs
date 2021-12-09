@@ -1,5 +1,5 @@
 # Ex2_OOP
-###### Directed weighted graph Graph construction, editing options and graphical interface
+###### Directed weighted graph construction, editing options and graphical interface
 
 
 ## About the project.
