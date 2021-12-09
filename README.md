@@ -1,5 +1,5 @@
 # Ex2_OOP
-###### Directed weighted graph construction, editing options and graphical interface
+###### Directed weighted graph construction, editing options and GUI
 
 
 ## About the project.
@@ -15,12 +15,18 @@ In our project we used several sources, some of which are:
 2. https://www.geeksforgeeks.org/traveling-salesman-problem-tsp-implementation/
 3. https://docs.oracle.com/javase/tutorial/uiswing/components/frame.html
 
+## GUI
+In the graphical interface we created a menu with 4 buttons:
+First button - "Save / Load" - clicking on it leads to a screen where two buttons appear, of loading or saving Jason file only! After pressing one of the buttons, you must access the terminal.
+
+Second button - "Edit" - clicking on it leads to a screen where two buttons, node and Edge, appear, clicking on each of them will lead you to different actions of adding / missing the same item.
+
+Third button - "Algorithms" - clicking on it leads to a screen with a number of different algorithms that can be executed on the graph, those that require data entry it will be executed through the terminal.
+
+Fourth button - "Drawing of the graph" - as its name implies, the drawing of the current graph, after all the edits made on it (if made).
+
 ## Class diagram.
     
 ![image](https://user-images.githubusercontent.com/92265738/142400751-f390dcf2-1d10-4920-8487-da49a4444246.png)
 
-## Simulation of elevator movement: https://youtu.be/Y7fwF-4Vxgc
-The red marking indicates the 0th floor.
-At the beginning of the simulation we see an orange elevator moving at a certain speed between the floors according to its calls,
-Later we can see a pink elevator that represents an elevator with a higher speed that moves between the floors.
-The simulation represents the case of Building B2 and calls Calls_a.
+
