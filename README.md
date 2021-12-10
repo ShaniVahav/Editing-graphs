@@ -27,6 +27,7 @@ Fourth button - "Drawing of the graph" - as its name implies, the drawing of the
 
 ## Class diagram.
     
-![image](https://user-images.githubusercontent.com/92265738/142400751-f390dcf2-1d10-4920-8487-da49a4444246.png)
+![image](https://user-images.githubusercontent.com/92265738/145578473-964f71ab-aa2c-4fcf-b09e-4b9ad3ea7a04.png)
+
 
 
