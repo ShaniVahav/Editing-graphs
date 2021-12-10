@@ -17,7 +17,8 @@ In our project we used several sources, some of which are:
 
 ## GUI
 In the graphical interface we created a menu with 4 buttons:
-First button - "Save / Load" - clicking on it leads to a screen where two buttons appear, of loading or saving Jason file only! After pressing one of the buttons, you must access the terminal.
+
+First button - "Save / Load" - clicking on it leads to a screen where two buttons appear, of loading or saving Json file only! After pressing one of the buttons, you must access the terminal.
 
 Second button - "Edit" - clicking on it leads to a screen where two buttons, node and Edge, appear, clicking on each of them will lead you to different actions of adding / missing the same item.
 
