@@ -18,7 +18,7 @@ public class Graph implements DirectedWeightedGraph {
         this.nodes = new HashMap<Integer, NodeData>();
         this.edegs = new HashMap<Integer, HashMap<Integer, EdgeData>>();
         this.opostieEdges = new HashMap<Integer, HashMap<Integer, EdgeData>>();
-        this.numberOfEdgs = 0;
+        this.numberOfEdgs = 0 ;
 
     }
 
