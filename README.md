@@ -32,28 +32,28 @@ Fourth button - "Drawing of the graph" - as its name implies, the drawing of the
 
 ## Analyzing the performance of the algorithms:
 #### isConnected:
-1,000 Vertices 10,000 Edges: 255 ms
-
-10,000 Vertices 100,000 Edges: 679 ms.
-100,000 Vertices 2,000,000 Edges: 9 sec 720 ms
-1,000,000 Vertices 10,000,000 Edges: could not create connected graph, 19 sec 25 ms.
+1,000 Vertices 10,000 Edges: 255 ms  
+10,000 Vertices 100,000 Edges: 679 ms  
+100,000 Vertices 2,000,000 Edges: 9 sec 720 ms  
+1,000,000 Vertices 10,000,000 Edges: could not create connected graph, 19 sec 25 ms  
 
 #### Center:
-1,000 Vertices 10,000 Edges:1 sec 593 ms
-10,000 Vertices 100,000 Edges: 4 min 20 sec
-100,000 Vertices 1,000,000 Edges: timeout
-1,000,000 Vertices 10,000,000 Edges: timeout
-tsp : 
-1000 Vertices 10,000 Edges: - 504ms 
-10000 Vertices 100,000 Edges - 2 sec 38 ms 
-100000 Vertices 1,000,000 Edges- 44 sec 695msc
-1000000 Vertices 10,000,000-timeout
+1,000 Vertices 10,000 Edges:1 sec 593 ms  
+10,000 Vertices 100,000 Edges: 4 min 20 sec  
+100,000 Vertices 1,000,000 Edges: timeout  
+1,000,000 Vertices 10,000,000 Edges: timeout  
+
+#### tsp : 
+1000 Vertices 10,000 Edges: - 504ms  
+10000 Vertices 100,000 Edges - 2 sec 38 ms   
+100000 Vertices 1,000,000 Edges- 44 sec 695msc  
+1000000 Vertices 10,000,000-timeout  
 
 #### shortestPath & shortestPathDist :
-1000 Vertices 10,000 Edges- 255 ms
-10000 Vertices-100,000 Edges 679 ms
-100000- Vertices1,000,000 Edges - 9 sec 164 
-1,000,000 Vertices 10,000,000 Edges: timeout
+1000 Vertices 10,000 Edges- 255 ms  
+10000 Vertices-100,000 Edges 679 ms  
+100000- Vertices1,000,000 Edges - 9 sec 164  
+1,000,000 Vertices 10,000,000 Edges: timeout  
 
 
 
