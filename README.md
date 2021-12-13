@@ -30,4 +30,11 @@ Fourth button - "Drawing of the graph" - as its name implies, the drawing of the
     
 ![image](https://user-images.githubusercontent.com/92265738/145578473-964f71ab-aa2c-4fcf-b09e-4b9ad3ea7a04.png)
 
+## Analyzing the performance of the algorithms:
+#### Graph size 1000:
 
+#### Graph size 10000:
+
+#### Graph size 100000:
+
+#### Graph size 1000000:
