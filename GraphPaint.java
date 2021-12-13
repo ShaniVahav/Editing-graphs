@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.*;
 import api.*;
 import java.awt.*;
@@ -25,6 +26,7 @@ public class GraphPaint extends JPanel {
         @Override
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
+            g.setFont(new Font("Arial", Font.PLAIN, 12));
             setBackground(Color.black);
             Graphics2D g2 = (Graphics2D) g;
             g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
@@ -33,13 +35,11 @@ public class GraphPaint extends JPanel {
             double yScale = ((double) getHeight() - 2 * padding - labelPadding) / (getMaxScoreY() - getMinScoreY());
 
             int x, y;
-            g.setColor(Color.red);
             int x2, y2;
             NodeData node_in, node_out;
-           for(Integer n : edges.keySet()){
-                 for (EdgeData edge : edges.get(n).values()){
-                    // edge = edges.get(n).get(e);
-
+            g.setColor(Color.red);
+            for(Integer n : edges.keySet()){
+                for (EdgeData edge : edges.get(n).values()){
                             if (edge == null) continue;
 
                          node_in = ((Edge) edge).getNode_in();
@@ -52,31 +52,42 @@ public class GraphPaint extends JPanel {
                          x2 = (int) ((getMaxScoreX() - node_out.getLocation().x()) * xScale + padding);
                          y2 = (int) ((getMaxScoreY() - node_out.getLocation().y()) * yScale + padding);
 
-                         g.drawLine(x, y, x2, y2);
+                     g.drawLine(x,y, x2,y2);
+                     g.drawString(">",x2-8, y2+7);
                  }
              }
 
-            g.setColor(Color.blue);
-            for (int i=0; i<nodes.size(); i++) {
-                x = (int) ((getMaxScoreX() - nodes.get(i).getLocation().x()) * xScale + padding);
-                y = (int) ((getMaxScoreY() - nodes.get(i).getLocation().y()) * yScale + padding);
+            double d_x, d_y;
+           String str;
+           for (Integer node : graph.getNodes().keySet()){
+                g.setColor(Color.blue);
+                d_x = nodes.get(node).getLocation().x();
+                d_y = nodes.get(node).getLocation().y();
+                x = (int)((getMaxScoreX() - d_x) * xScale + padding);
+                y = (int)((getMaxScoreY() - d_y) * yScale + padding);
+
                 g.fillOval(x, y, 5, 5);
+                g.setColor(Color.white);
+                str = "(" + df.format(d_x) + ", " + df.format(d_y) + ")";
+                g.drawString(str,x,y);
             }
 
         }
 
+    private static final DecimalFormat df = new DecimalFormat("0.00");
+
     private double getMaxScoreX() {
         double maxScore = Double.MIN_VALUE;
-        for (int i = 0; i < nodes.size(); i++) {
-            maxScore = Math.max(maxScore, nodes.get(i).getLocation().x());
+        for (Integer node : graph.getNodes().keySet()){
+            maxScore = Math.max(maxScore, nodes.get(node).getLocation().x());
         }
         return maxScore;
     }
 
     private double getMinScoreX() {
         double minScore = Double.MAX_VALUE;
-        for (int i = 0; i < nodes.size(); i++){
-            minScore = Math.min(minScore, nodes.get(i).getLocation().x());
+        for (Integer node : graph.getNodes().keySet()){
+            minScore = Math.min(minScore, nodes.get(node).getLocation().x());
         }
         return minScore;
     }
@@ -84,16 +95,16 @@ public class GraphPaint extends JPanel {
 
     private double getMaxScoreY() {
         double maxScore = Double.MIN_VALUE;
-        for (int i = 0; i < nodes.size(); i++) {
-            maxScore = Math.max(maxScore, nodes.get(i).getLocation().y());
+        for (Integer node : graph.getNodes().keySet()){
+            maxScore = Math.max(maxScore, nodes.get(node).getLocation().y());
         }
         return maxScore;
     }
 
     private double getMinScoreY() {
         double minScore = Double.MAX_VALUE;
-        for (int i = 0; i < nodes.size(); i++){
-            minScore = Math.min(minScore, nodes.get(i).getLocation().y());
+        for (Integer node : graph.getNodes().keySet()){
+            minScore = Math.min(minScore, nodes.get(node).getLocation().y());
         }
         return minScore;
     }

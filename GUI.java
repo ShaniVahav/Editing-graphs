@@ -26,6 +26,8 @@ public class GUI extends JPanel {
         panelCont = frame.getContentPane();
         panelCont.setLayout(c);
         frame.setLayout(c);
+        frame.add(new Welcome());
+     //   frame.getContentPane().setBackground(new Color(130, 207, 226, 139));
         frame.setVisible(true);
     }
 
@@ -61,7 +63,7 @@ public class GUI extends JPanel {
         button1.setSize(150, 100);
         button1.addActionListener(new Listener.Saveload());
 
-        JButton button2 = new JButton("Save a graph");
+        JButton button2 = new JButton("Save the graph");
         button2.setLocation(210, 30);
         button2.setSize(150, 100);
         button2.addActionListener(new Listener.Saveload());
@@ -99,6 +101,20 @@ public class GUI extends JPanel {
         button1.setLocation(30, 30);
         button1.setSize(150, 100);
         button1.addActionListener(new Listener.Nodeinfo());
+
+        JLabel l = new JLabel("^^^");
+        JLabel l1 = new JLabel("NOTE: After clicking on");
+        JLabel l2 = new JLabel("this button you must");
+        JLabel l3 = new JLabel("access the terminal to continue!");
+
+        l.setBounds(90,120,400,50);
+        l1.setBounds(30,130,400,50);
+        l2.setBounds(30, 150,400, 50);
+        l3.setBounds(30,170,400,50);
+        panel.add(l);
+        panel.add(l1);
+        panel.add(l2);
+        panel.add(l3);
 
         JButton button2 = new JButton("Actions on an existing node");
         button2.setLocation(210, 30);
@@ -156,12 +172,25 @@ public class GUI extends JPanel {
         button3.setSize(150, 100);
         button3.addActionListener(new Listener.EdgeActions());
 
+        JButton button4 = new JButton("connect");
+        button4.setLocation(570, 30);
+        button4.setSize(150, 100);
+        button4.addActionListener(new Listener.EdgeActions());
+
         panel.add(button1);
         panel.add(button2);
         panel.add(button3);
+        panel.add(button4);
+
+        JLabel l = new JLabel("NOTE: After clicking a button in this window you"
+        + " must access the terminal to continue!");
+        l.setBounds(30,150,600,30);
+        panel.add(l);
 
         panelCont.add(panel, "0");
         c.show(panelCont, "0");
+
+
     }
 
 
@@ -194,16 +223,26 @@ public class GUI extends JPanel {
         button5.setSize(150, 100);
         button5.addActionListener(new Listener.Algo());
 
-
         panel.add(button1);
         panel.add(button2);
         panel.add(button3);
         panel.add(button4);
         panel.add(button5);
 
+        JLabel l = new JLabel("NOTE: After clicking a button in this window " +
+                "(excluding isConnected() and center()),");
+        JLabel l2 = new JLabel(" you must access the terminal to continue!");
+        l.setBounds(30,280,600,30);
+        l2.setBounds(135, 297, 600, 30);
+        panel.add(l);
+        panel.add(l2);
+
         panelCont.add(panel, "0");
         c.show(panelCont, "0");
     }
+
+
+
 
     public static class TruePaint extends JPanel{
         public void paintComponent(Graphics g) {
@@ -237,6 +276,84 @@ public class GUI extends JPanel {
             int c = alg.center().getKey();
             String ans = String.valueOf(c);
             g.drawString(ans, w/2, h/2);
+        }
+    }
+
+    public static class SaveSuccessPaint extends JPanel{
+        public void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            g.setColor(Color.blue);
+            int w = getWidth();
+            int h = getHeight();
+            g.setFont((new Font("Arial", Font.PLAIN, 24)));
+            String str = "The graph was saved successfully";
+            g.drawString(str, 100, h/2);
+        }
+    }
+
+
+    public static class SaveFailPaint extends JPanel{
+        public void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            g.setColor(Color.red);
+            int w = getWidth();
+            int h = getHeight();
+            g.setFont((new Font("Arial", Font.PLAIN, 24)));
+            String str = "Failed to save graph!";
+            g.drawString(str, 170, h/2);
+        }
+    }
+
+    public static class LoadSuccessPaint extends JPanel{
+        public void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            g.setColor(Color.blue);
+            int w = getWidth();
+            int h = getHeight();
+            g.setFont((new Font("Arial", Font.PLAIN, 24)));
+            String str = "The graph loaded successfully";
+            g.drawString(str, 110, h/2);
+        }
+    }
+
+    public static class LoadFailPaint extends JPanel{
+        public void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            g.setColor(Color.red);
+            int w = getWidth();
+            int h = getHeight();
+            g.setFont((new Font("Arial", Font.PLAIN, 24)));
+            String str = "Failed to load the graph!";
+            g.drawString(str, 150, h/2);
+        }
+    }
+
+
+
+    public static class GoTerminal extends JPanel{
+        public void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            g.setColor(Color.red);
+            int w = getWidth();
+            int h = getHeight();
+            g.setFont((new Font("Arial", Font.BOLD, 24)));
+            String ans = "Go to the terminal to continue";
+            g.drawString(ans, 110, h/2);
+        }
+    }
+
+    public static class Welcome extends JPanel{
+        public void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            g.setColor(new Color(12, 159, 196, 139));
+            int w = getWidth();
+            int h = getHeight();
+            g.setFont((new Font("Arial", Font.BOLD, 50)));
+            String a1 = "Welcome to our first GUI!";
+            String a2 = "We hope you'll enjoy ^_^";
+            g.drawString(a1, w/2-300, (h/2)-100);
+            g.setFont((new Font("Bierstadt Display", Font.BOLD, 35)));
+            g.drawString(a2, w/2-210, (h/2));
         }
     }
 

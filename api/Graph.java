@@ -5,9 +5,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 public class Graph implements DirectedWeightedGraph {
-    private HashMap<Integer, NodeData> nodes;
-    private HashMap<Integer, HashMap<Integer, EdgeData>> edegs;
-    private HashMap<Integer, HashMap<Integer, EdgeData>> opostieEdges;
+    protected HashMap<Integer, NodeData> nodes;
+    protected HashMap<Integer, HashMap<Integer, EdgeData>> edegs;
+    protected HashMap<Integer, HashMap<Integer, EdgeData>> opostieEdges;
     protected int mc;
     protected int numberOfEdgs = 0;
     protected int nodeSizeIncludeDelete = 0 ;
@@ -18,7 +18,7 @@ public class Graph implements DirectedWeightedGraph {
         this.nodes = new HashMap<Integer, NodeData>();
         this.edegs = new HashMap<Integer, HashMap<Integer, EdgeData>>();
         this.opostieEdges = new HashMap<Integer, HashMap<Integer, EdgeData>>();
-        this.numberOfEdgs = 0 ;
+        this.numberOfEdgs = 0;
 
     }
 
@@ -78,14 +78,14 @@ public class Graph implements DirectedWeightedGraph {
         numberOfEdgs++;
     }
 
-    @Override  // todo: אם הגרף השתנה מאז יצירת האיטרטור, יש לזרוק שגיאה
+    @Override
     public Iterator<NodeData> nodeIter() {
         Iterator<NodeData> it = nodes.values().iterator();
         return it;
 
     }
 
-    @Override  // todo: אם הגרף השתנה מאז יצירת האיטרטור, יש לזרוק שגיאה ///////////////////////////////////
+    @Override
     public Iterator<EdgeData> edgeIter() {
         int size = this.nodeSize();
         ArrayList<EdgeData> finalList = new ArrayList(size);
@@ -106,7 +106,7 @@ public class Graph implements DirectedWeightedGraph {
     }
 
 
-    @Override  // todo: אם הגרף השתנה מאז יצירת האיטרטור, יש לזרוק שגיאה
+    @Override
     public Iterator<EdgeData> edgeIter(int node_id) {
         Iterator<EdgeData> it = edegs.get(node_id).values().iterator();
         return it;
