@@ -38,7 +38,7 @@ Fourth button - "Drawing of the graph" - as its name implies, the drawing of the
 100,000 Vertices 2,000,000 Edges: 9 sec 720 ms  
 1,000,000 Vertices 10,000,000 Edges: could not create connected graph, 19 sec 25 ms.  
 
-#### Center:
+#### center:
 1,000 Vertices 10,000 Edges:1 sec 593 ms  
 10,000 Vertices 100,000 Edges: 4 min 20 sec  
 100,000 Vertices 1,000,000 Edges: timeout  
@@ -50,7 +50,7 @@ Fourth button - "Drawing of the graph" - as its name implies, the drawing of the
 100000 Vertices 1,000,000 Edges- 44 sec 695msc  
 1000000 Vertices 10,000,000-timeout
 
-#### shortestpath & shortestpathdist:
+#### shortestPath & shortestPathDist:
 1000 Vertices 10,000 Edges- 255 ms  
 10000 Vertices-100,000 Edges 679 ms  
 100000- Vertices1,000,000 Edges - 9 sec 164   
