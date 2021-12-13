@@ -33,7 +33,8 @@ Fourth button - "Drawing of the graph" - as its name implies, the drawing of the
 ## Analyzing the performance of the algorithms:
 #### isConnected:
 1,000 Vertices 10,000 Edges: 255 ms
-10,000 Vertices 100,000 Edges: 679 ms
+
+10,000 Vertices 100,000 Edges: 679 ms.
 100,000 Vertices 2,000,000 Edges: 9 sec 720 ms
 1,000,000 Vertices 10,000,000 Edges: could not create connected graph, 19 sec 25 ms.
 
