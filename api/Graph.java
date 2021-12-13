@@ -78,17 +78,34 @@ public class Graph implements DirectedWeightedGraph {
         numberOfEdgs++;
     }
 
-    @Override
+  @Override  // 
     public Iterator<NodeData> nodeIter() {
-        Iterator<NodeData> it = nodes.values().iterator();
-        return it;
+        return new Iterator<NodeData>() {
+            public Iterator<NodeData> iter = Graph.this.nodes.values().iterator();
+            public int itMC = getMC();
 
+            @Override
+            public boolean hasNext() {
+                if (itMC != getMC()) {
+                    throw new NoSuchElementException();
+                }
+                return iter.hasNext();
+            }
+
+            @Override
+            public NodeData next() {
+                if (itMC != getMC()) {
+                    throw new NoSuchElementException();
+                }
+                return iter.next();
+            }
+        };
     }
 
-    @Override
+    @Override  // 
     public Iterator<EdgeData> edgeIter() {
         int size = this.nodeSize();
-        ArrayList<EdgeData> finalList = new ArrayList(size);
+        ArrayList<EdgeData> finalList = new ArrayList(size);///////////////*****
         ArrayList<Iterator> iterators = new ArrayList(size);
         Iterator<Integer> idSet = this.nodes.keySet().iterator();
         while (idSet.hasNext()) {        /////////////////
@@ -102,14 +119,46 @@ public class Graph implements DirectedWeightedGraph {
                 finalList.add(currentEdge);
             }
         }
-        return finalList.iterator();
+        return new Iterator<EdgeData>() {
+            public Iterator<EdgeData> iter = finalList.iterator();
+            public int itmc = getMC();
+            @Override
+            public boolean hasNext() {
+                if (itmc != getMC())
+                    throw new NoSuchElementException();
+                return iter.hasNext();
+            }
+            @Override
+            public EdgeData next() {
+                if (itmc != getMC()) {
+                    throw new NoSuchElementException();
+                }
+                return iter.next();
+            }
+        };
     }
-
-
-    @Override
+    @Override  //
     public Iterator<EdgeData> edgeIter(int node_id) {
-        Iterator<EdgeData> it = edegs.get(node_id).values().iterator();
-        return it;
+        return new Iterator<EdgeData>() {
+          public Iterator<EdgeData> iter = edegs.get(node_id).values().iterator();
+           public int fmc = getMC();
+
+            @Override
+            public boolean hasNext() {
+                if (fmc != getMC()) {
+                    throw new NoSuchElementException();
+                }
+                return iter.hasNext();
+            }
+
+            @Override
+            public EdgeData next() {
+                if (fmc != getMC()) {
+                    throw new NoSuchElementException();
+                }
+                return iter.next();
+            }
+        };
     }
 
     @Override
