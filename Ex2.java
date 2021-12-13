@@ -1,6 +1,5 @@
 import api.DirectedWeightedGraph;
 import api.DirectedWeightedGraphAlgorithms;
-import api.Graph;
 import api.GraphAlgorithm;
 
 /**
@@ -37,9 +36,5 @@ public class Ex2 {
     public static void runGUI(String json_file) {
         DirectedWeightedGraphAlgorithms alg = getGrapgAlgo(json_file);
         new GUI(alg);
-    }
-
-    public static void main(String[] args){
-        runGUI(args[0]);
     }
 }
